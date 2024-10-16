@@ -46,11 +46,16 @@ const config: Config = {
         letterSpacing: '-1%'
       }]
     },
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+    colors: {
+      'background-surface1': "var(--background-surface1)",
+      'background-surface2': "var(--background-surface2)",
+      'background-surface3': "var(--background-surface3)",
+      'background-surface4': "var(--background-surface4)",
+      'background-dark1': "var(--background-dark1)",
+      'background-dark2': "var(--background-dark2)",
+      'background-primary': "var(--background-primary)",
+      'background-highlight': "var(--background-highlight)",
+      'background-subtle': "var(--background-subtle)",
     },
   },
   plugins: [],
