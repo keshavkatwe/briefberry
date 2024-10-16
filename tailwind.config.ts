@@ -33,6 +33,17 @@ const config: Config = {
         fontWeight: 500,
         lineHeight: '30px',
         letterSpacing: '0'
+      }],
+      body: ['16', {
+        lineHeight: '22px'
+      }],
+      'body-lg': ['18', {
+        lineHeight: '24px'
+      }],
+      'button': ['14', {
+        lineHeight: '20px',
+        fontWeight: 500,
+        letterSpacing: '-1%'
       }]
     },
     extend: {
