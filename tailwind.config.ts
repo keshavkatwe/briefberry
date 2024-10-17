@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindButtonVariants from "./plugins/tailwind-button-variants";
 
 const config: Config = {
   content: [
@@ -96,6 +97,6 @@ const config: Config = {
       "text-blue": "var(--text-blue)",
     },
   },
-  plugins: [],
+  plugins: [tailwindButtonVariants],
 };
 export default config;
