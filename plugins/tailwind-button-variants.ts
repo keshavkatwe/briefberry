@@ -110,9 +110,19 @@ const tailwindButtonVariants = plugin(({ addComponents, theme }) => {
     },
   });
 
+  const buttonSizes: RecursiveKeyValuePair = theme("buttonSizes", {
+    regular: {
+      height: theme("spacing.12"),
+      padding: `0 ${theme("spacing.7")}`,
+    },
+  });
+
   // Generate variant classes
   Object.keys(buttonVariants).forEach((variant) => {
     buttons[`.btn-${variant}`] = buttonVariants[variant];
+  });
+  Object.keys(buttonSizes).forEach((size) => {
+    buttons[`.btn-${size}`] = buttonSizes[size];
   });
 
   addComponents(buttons);

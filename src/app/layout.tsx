@@ -30,9 +30,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="h-20 flex justify-between px-5">
+        <div className="h-20 flex justify-between px-5 items-center">
           <Image alt={""} src={Logo} />
-          <button className={"btn-secondary btn-regular"}>Sign in</button>
+          <button className={"btn-secondary btn-regular rounded-full"}>
+            Sign in
+          </button>
         </div>
         {children}
       </body>
