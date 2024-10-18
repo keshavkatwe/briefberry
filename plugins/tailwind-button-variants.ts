@@ -1,5 +1,5 @@
 import plugin from "tailwindcss/plugin";
-import { CSSRuleObject } from "tailwindcss/types/config";
+import { CSSRuleObject, RecursiveKeyValuePair } from "tailwindcss/types/config";
 //
 // // Defining types for better clarity and type safety
 // interface ButtonStyles {
@@ -86,7 +86,7 @@ import { CSSRuleObject } from "tailwindcss/types/config";
 const tailwindButtonVariants = plugin(({ addComponents, theme }) => {
   const buttons: CSSRuleObject = {};
 
-  const buttonVariants = theme("buttonVariants", {
+  const buttonVariants: RecursiveKeyValuePair = theme("buttonVariants", {
     primary: {
       backgroundColor: theme("colors.gray.500"),
       color: theme("colors.white"),
