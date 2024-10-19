@@ -3,18 +3,18 @@ import { Modal } from "@/components";
 import { Field, Input, Label } from "@headlessui/react";
 import Link from "next/link";
 
-const SignInWidget = () => {
+const SignUpWidget = () => {
   return (
     <>
       <Modal
         open={true}
         className="relative z-50"
         onClose={() => {}}
-        title={"Sign in to Briefberry"}
+        title={"Create an account"}
       >
         <div className={"space-y-6 text-center"}>
           <button className={"btn-secondary btn-regular w-full"}>
-            Sign in with google
+            Sign up with Google
           </button>
           <p className={"text-small text-text-tertiary"}>Or use your email</p>
           <div className={"space-y-4"}>
@@ -29,12 +29,12 @@ const SignInWidget = () => {
           </div>
           <div className={"space-y-4"}>
             <button className={"btn-primary btn-regular w-full"}>
-              Sign in
+              Create account
             </button>
             <p className={"text-hairline text-text-secondary"}>
-              Need an account?{" "}
+              Already have an account?{" "}
               <Link className="text-text-primary" href={"/sign-up"}>
-                Sign up
+                Sign in
               </Link>
             </p>
           </div>
@@ -43,4 +43,4 @@ const SignInWidget = () => {
     </>
   );
 };
-export default SignInWidget;
+export default SignUpWidget;
