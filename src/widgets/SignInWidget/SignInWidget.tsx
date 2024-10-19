@@ -17,16 +17,9 @@ const SignInWidget = () => {
           </button>
           <p className={"text-small text-text-tertiary"}>Or use your email</p>
           <div>
-            <Field className={"relative"}>
-              <Label className="absolute bg-background-surface1 -top-[5px] mx-5 px-2 text-small">
-                Email
-              </Label>
-              <Input
-                className={
-                  "h-12 bg-background-transparent border rounded-full px-7 text-button w-full border-stroke1"
-                }
-                placeholder={"designer@example.com"}
-              />
+            <Field className={"input-field"}>
+              <Label>Email</Label>
+              <Input placeholder={"designer@example.com"} />
             </Field>
           </div>
         </div>

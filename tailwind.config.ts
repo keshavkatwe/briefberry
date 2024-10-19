@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import tailwindButtonVariants from "./plugins/tailwind-button-variants";
+import tailwindInputVariants from "./plugins/tailwind-input-variants";
 
 const config: Config = {
   content: [
@@ -113,6 +114,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [tailwindButtonVariants],
+  plugins: [tailwindButtonVariants, tailwindInputVariants],
 };
 export default config;
