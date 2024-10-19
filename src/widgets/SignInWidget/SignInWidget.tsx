@@ -17,14 +17,15 @@ const SignInWidget = () => {
           </button>
           <p className={"text-small text-text-tertiary"}>Or use your email</p>
           <div>
-            <Field>
-              <Label className="text-sm/6 font-medium text-white">
-                Street address
+            <Field className={"relative"}>
+              <Label className="absolute bg-background-surface1 -top-[5px] mx-5 px-2 text-small">
+                Email
               </Label>
               <Input
                 className={
-                  "mt-3 block w-full rounded-lg border-none bg-white/5 py-1.5 px-3 text-sm/6 text-white focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25"
+                  "h-12 bg-background-transparent border rounded-full px-7 text-button w-full border-stroke1"
                 }
+                placeholder={"designer@example.com"}
               />
             </Field>
           </div>

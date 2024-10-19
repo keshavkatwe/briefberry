@@ -88,6 +88,7 @@ const config: Config = {
       ],
     },
     colors: {
+      "background-transparent": "transparent",
       "background-surface1": "var(--background-surface1)",
       "background-surface2": "var(--background-surface2)",
       "background-surface3": "var(--background-surface3)",
@@ -104,6 +105,7 @@ const config: Config = {
       "text-tertiary": "var(--text-tertiary)",
       "text-light": "var(--text-light)",
       "text-blue": "var(--text-blue)",
+      stroke1: "var(--stroke1)",
     },
     extend: {
       borderRadius: {
