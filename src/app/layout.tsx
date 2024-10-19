@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Image from "next/image";
 import Logo from "../../public/svg/logo.svg";
+import { ReactNode } from "react";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -22,8 +24,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  auth,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
+  auth: ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -32,11 +36,15 @@ export default function RootLayout({
       >
         <div className="h-20 flex justify-between px-5 items-center">
           <Image alt={""} src={Logo} />
-          <button className={"btn-secondary btn-regular rounded-full"}>
+          <Link
+            href={"/login"}
+            className={"btn-secondary btn-regular rounded-full"}
+          >
             Sign in
-          </button>
+          </Link>
         </div>
         {children}
+        {auth}
       </body>
     </html>
   );
