@@ -32,8 +32,11 @@ const tailwindButtonVariants = plugin(({ addComponents, theme }) => {
     regular: {
       height: theme("spacing.12"),
       padding: `0 ${theme("spacing.7")}`,
-      width: theme("width.full"),
       borderRadius: theme("borderRadius.full"),
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
     },
   });
 

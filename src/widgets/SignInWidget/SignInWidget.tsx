@@ -13,7 +13,7 @@ const SignInWidget = () => {
         title={"Sign in to Briefberry"}
       >
         <div className={"space-y-6 text-center"}>
-          <button className={"btn-secondary btn-regular"}>
+          <button className={"btn-secondary btn-regular w-full"}>
             Sign up with google
           </button>
           <p className={"text-small text-text-tertiary"}>Or use your email</p>
@@ -28,7 +28,9 @@ const SignInWidget = () => {
             </Field>
           </div>
           <div className={"space-y-4"}>
-            <button className={"btn-primary btn-regular"}>Sign in</button>
+            <button className={"btn-primary btn-regular w-full"}>
+              Sign in
+            </button>
             <p className={"text-hairline text-text-secondary"}>
               Need an account?{" "}
               <Link className="text-text-primary" href={"/sign-up"}>
