@@ -89,12 +89,18 @@ const config: Config = {
       "background-primary": "var(--background-primary)",
       "background-highlight": "var(--background-highlight)",
       "background-subtle": "var(--background-subtle)",
+      "background-overlay": "var(--background-overlay)",
       "text-primary": "var(--text-primary)",
       "text-primary-body": "var(--text-primary-body)",
       "text-secondary": "var(--text-secondary)",
       "text-tertiary": "var(--text-tertiary)",
       "text-light": "var(--text-light)",
       "text-blue": "var(--text-blue)",
+    },
+    extend: {
+      borderRadius: {
+        "32": "32px",
+      },
     },
   },
   plugins: [tailwindButtonVariants],
