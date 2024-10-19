@@ -51,19 +51,27 @@ const config: Config = {
         },
       ],
       body: [
-        "16",
+        "16px",
         {
           lineHeight: "22px",
         },
       ],
       "body-lg": [
-        "18",
+        "18px",
         {
           lineHeight: "24px",
         },
       ],
+      small: [
+        "12px",
+        {
+          lineHeight: "10px",
+          fontWeight: 400,
+          letterSpacing: "-1%",
+        },
+      ],
       button: [
-        "14",
+        "14px",
         {
           lineHeight: "20px",
           fontWeight: 500,

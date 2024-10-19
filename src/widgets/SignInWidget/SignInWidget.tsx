@@ -9,7 +9,14 @@ const SignInWidget = () => {
         className="relative z-50"
         onClose={() => {}}
         title={"Sign in to Briefberry"}
-      ></Modal>
+      >
+        <div className={"space-y-6 text-center"}>
+          <button className={"btn-secondary btn-regular rounded-full w-full"}>
+            Sign up with google
+          </button>
+          <p className={"text-small text-text-tertiary"}>Or use your email</p>
+        </div>
+      </Modal>
     </>
   );
 };
