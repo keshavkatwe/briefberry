@@ -1,4 +1,4 @@
-import SignInWidget from "@/widgets/SignInWidget/SignInWidget";
+import { SignInWidget } from "@/widgets";
 
 const LoginPage = () => {
   return <SignInWidget />;
