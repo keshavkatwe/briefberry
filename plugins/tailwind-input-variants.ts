@@ -5,10 +5,11 @@ const tailwindInputVariants = plugin(({ addUtilities, theme }) => {
   addUtilities({
     ".input-field": {
       position: "relative",
+      paddingTop: theme("spacing.[1.5]"),
       label: {
         position: "absolute",
         backgroundColor: theme("colors.background-surface1"),
-        top: "-5px",
+        top: "1px",
         marginLeft: theme("spacing.5"),
         paddingLeft: theme("spacing.2"),
         paddingRight: theme("spacing.2"),

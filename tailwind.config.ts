@@ -71,6 +71,13 @@ const config: Config = {
           letterSpacing: "-1%",
         },
       ],
+      hairline: [
+        "13px",
+        {
+          lineHeight: "16px",
+          fontWeight: 400,
+        },
+      ],
       button: [
         "14px",
         {
