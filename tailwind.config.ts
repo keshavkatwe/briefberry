@@ -118,6 +118,7 @@ const config: Config = {
     extend: {
       borderRadius: {
         "32": "32px",
+        "16": "16px",
       },
       fontFamily: {
         sans: ["var(--font-inter)"],
