@@ -3,6 +3,7 @@ import { Modal } from "@/components";
 import { Field, Input, Label } from "@headlessui/react";
 import Link from "next/link";
 import { SignInAction } from "@/widgets/SignInWidget/signIn.action";
+import SubmitButton from "../SubmitButton/SubmitButton";
 
 const SignInWidget = () => {
   return (
@@ -38,9 +39,7 @@ const SignInWidget = () => {
               </Field>
             </div>
             <div className={"space-y-4"}>
-              <button className={"btn-primary btn-regular w-full"}>
-                Sign in
-              </button>
+              <SubmitButton label={"Sign in"} />
               <p className={"text-hairline text-text-secondary"}>
                 Need an account?{" "}
                 <Link className="text-text-primary" href={"/sign-up"}>
