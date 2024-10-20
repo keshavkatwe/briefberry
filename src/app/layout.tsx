@@ -1,17 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter, Instrument_Sans } from "next/font/google";
+import { Instrument_Sans } from "next/font/google";
 
 import Image from "next/image";
 import Logo from "../../public/svg/logo.svg";
 import { ReactNode } from "react";
 import Link from "next/link";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
 const instrument_Sans = Instrument_Sans({
   subsets: ["latin"],
   variable: "--instrument-sans",
@@ -32,9 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${instrument_Sans.variable} antialiased`}
-      >
+      <body className={`${instrument_Sans.variable} antialiased`}>
         <div className="h-20 flex justify-between px-5 items-center">
           <Image alt={""} src={Logo} />
           <Link
