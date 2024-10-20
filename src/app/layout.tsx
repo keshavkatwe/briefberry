@@ -7,6 +7,7 @@ import Logo from "../../public/svg/logo.svg";
 import { ReactNode } from "react";
 import Link from "next/link";
 import { ClerkProvider } from "@clerk/nextjs";
+import { NavAccount } from "@/widgets";
 
 const instrument_Sans = Instrument_Sans({
   subsets: ["latin"],
@@ -31,13 +32,10 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${instrument_Sans.variable} antialiased`}>
           <div className="h-20 flex justify-between px-5 items-center">
-            <Image alt={""} src={Logo} />
-            <Link
-              href={"/login"}
-              className={"btn-secondary btn-regular rounded-full"}
-            >
-              Sign in
+            <Link href={"/"}>
+              <Image alt={""} src={Logo} />
             </Link>
+            <NavAccount />
           </div>
           {children}
           {auth}
