@@ -3,14 +3,15 @@ import { useFormStatus } from "react-dom";
 
 interface ISubmitButtonProps {
   label: string;
+  isLoading?: boolean;
 }
-const SubmitButton = ({ label }: ISubmitButtonProps) => {
+const SubmitButton = ({ label, isLoading }: ISubmitButtonProps) => {
   const { pending } = useFormStatus();
 
   return (
     <button
       type="submit"
-      disabled={pending}
+      disabled={pending || isLoading}
       className={"btn-primary btn-regular w-full flex flex-row gap-2"}
     >
       {pending && (

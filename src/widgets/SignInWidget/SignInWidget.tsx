@@ -2,10 +2,42 @@
 import { Modal } from "@/components";
 import { Field, Input, Label } from "@headlessui/react";
 import Link from "next/link";
-import { SignInAction } from "@/widgets/SignInWidget/signIn.action";
 import SubmitButton from "../SubmitButton/SubmitButton";
+import { useSignIn } from "@clerk/nextjs";
+import { useCallback, useState } from "react";
 
 const SignInWidget = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { signIn, setActive, isLoaded } = useSignIn();
+
+  const onFormSubmit = useCallback(
+    async (e: React.FormEvent) => {
+      e.preventDefault();
+
+      if (!isLoaded) {
+        return;
+      }
+      try {
+        const signInAttempt = await signIn?.create({
+          identifier: email,
+          password: password,
+        });
+
+        if (signInAttempt?.status === "complete") {
+          await setActive?.({ session: signInAttempt?.createdSessionId });
+        } else {
+          // If the status is not complete, check why. User may need to
+          // complete further steps.
+          console.error(JSON.stringify(signInAttempt, null, 2));
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    [email, isLoaded, password, setActive, signIn],
+  );
+
   return (
     <>
       <Modal
@@ -14,7 +46,7 @@ const SignInWidget = () => {
         onClose={() => {}}
         title={"Sign in to Briefberry"}
       >
-        <form action={SignInAction}>
+        <form onSubmit={onFormSubmit}>
           <div className={"space-y-6 text-center"}>
             <button
               type={"button"}
@@ -27,7 +59,12 @@ const SignInWidget = () => {
             <div className={"space-y-4"}>
               <Field className={"input-field"}>
                 <Label>Email</Label>
-                <Input name={"email"} placeholder={"designer@example.com"} />
+                <Input
+                  name={"email"}
+                  placeholder={"designer@example.com"}
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                />
               </Field>
               <Field className={"input-field"}>
                 <Label>Password</Label>
@@ -35,6 +72,8 @@ const SignInWidget = () => {
                   name={"password"}
                   placeholder={"------"}
                   type={"password"}
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
                 />
               </Field>
             </div>
