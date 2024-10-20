@@ -119,6 +119,10 @@ const config: Config = {
       borderRadius: {
         "32": "32px",
       },
+      fontFamily: {
+        sans: ["var(--font-inter)"],
+        mono: ["var(--instrument-sans)"],
+      },
     },
   },
   plugins: [tailwindButtonVariants, tailwindInputVariants],
