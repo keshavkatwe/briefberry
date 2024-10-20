@@ -24,6 +24,7 @@
   --text-blue: #2D68FF;
 
   --stroke1: #E2E2E2;
+  --stroke-subtle: #A8A8A810;
 }
 
 @media (prefers-color-scheme: dark) {

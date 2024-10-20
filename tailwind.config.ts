@@ -114,6 +114,7 @@ const config: Config = {
       "text-light": "var(--text-light)",
       "text-blue": "var(--text-blue)",
       stroke1: "var(--stroke1)",
+      "stroke-subtle": "var(--stroke-subtle)",
     },
     extend: {
       borderRadius: {

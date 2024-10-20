@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+import { Menu, MenuButton, MenuItems, MenuSeparator } from "@headlessui/react";
+import MenuLink from "@/widgets/NavAccount/MenuLink";
+import {
+  DocumentDuplicateIcon,
+  ArrowLeftStartOnRectangleIcon,
+  UserIcon,
+} from "@heroicons/react/24/outline";
 
 const NavAccount = async () => {
   const user = await currentUser();
@@ -29,21 +35,24 @@ const NavAccount = async () => {
           <MenuItems
             transition
             anchor="bottom end"
-            className="w-60 bg-background-surface2 mt-3 rounded-32 p-3"
+            className="w-60 bg-background-surface2 mt-3 rounded-32 py-3"
           >
-            <MenuItem>
-              <Link
-                href={"/briefs"}
-                className="h-12 w-full rounded-16 text-hairline text-text-secondary hover:bg-background-highlight flex flex-col justify-center "
-              >
-                My briefs
-              </Link>
-            </MenuItem>
-            <MenuItem>
-              <Link href={"/briefs"} className="block h-12">
-                Log out
-              </Link>
-            </MenuItem>
+            <MenuLink
+              label={"My briefs"}
+              href={"/briefs"}
+              icon={DocumentDuplicateIcon}
+            />
+            <MenuLink
+              label={"Account settings"}
+              href={"/settings"}
+              icon={UserIcon}
+            />
+            <MenuSeparator className={"h-px bg-background-subtle my-2"} />
+            <MenuLink
+              label={"Log out"}
+              href={"/briefs"}
+              icon={ArrowLeftStartOnRectangleIcon}
+            />
           </MenuItems>
         </Menu>
       </div>
