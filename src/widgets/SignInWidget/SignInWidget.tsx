@@ -5,11 +5,13 @@ import Link from "next/link";
 import SubmitButton from "../SubmitButton/SubmitButton";
 import { useSignIn } from "@clerk/nextjs";
 import { useCallback, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const SignInWidget = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { signIn, setActive, isLoaded } = useSignIn();
+  const router = useRouter();
 
   const onFormSubmit = useCallback(
     async (e: React.FormEvent) => {
@@ -26,6 +28,7 @@ const SignInWidget = () => {
 
         if (signInAttempt?.status === "complete") {
           await setActive?.({ session: signInAttempt?.createdSessionId });
+          router.push("/briefs");
         } else {
           // If the status is not complete, check why. User may need to
           // complete further steps.
@@ -35,7 +38,7 @@ const SignInWidget = () => {
         console.log(e);
       }
     },
-    [email, isLoaded, password, setActive, signIn],
+    [email, isLoaded, password, router, setActive, signIn],
   );
 
   return (
