@@ -34,7 +34,7 @@ const NavAccount = async () => {
     return (
       <div className={"flex gap-3"}>
         <Link
-          href={"/login"}
+          href={"/new/type"}
           className={"btn-primary btn-regular rounded-full"}
         >
           New brief
