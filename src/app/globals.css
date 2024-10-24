@@ -25,6 +25,10 @@
 
   --stroke1: #E2E2E2;
   --stroke-subtle: #A8A8A810;
+
+  --green: #00A656;
+  --blue: #2D68FF;
+  --red: #FF381C;
 }
 
 @media (prefers-color-scheme: dark) {

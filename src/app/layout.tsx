@@ -30,8 +30,10 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${instrument_Sans.variable} antialiased`}>
-          <div className="h-20 flex justify-between px-5 items-center">
+        <body
+          className={`${instrument_Sans.variable} antialiased h-lvh flex flex-col`}
+        >
+          <div className="h-20 flex justify-between px-5 items-center fixed w-full">
             <Link href={"/"}>
               <Image alt={""} src={Logo} />
             </Link>
