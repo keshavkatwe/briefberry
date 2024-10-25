@@ -1,6 +1,9 @@
-import { SignInWidget } from "@/widgets";
+"use client";
+import { useRouter } from "next/navigation";
+import SignInWidget from "@/widgets/SignInWidget/SignInWidget";
 
 const LoginPage = () => {
-  return <SignInWidget />;
+  const { back } = useRouter();
+  return <SignInWidget onClose={() => back()} />;
 };
 export default LoginPage;

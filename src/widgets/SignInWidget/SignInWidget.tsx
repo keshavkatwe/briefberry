@@ -7,7 +7,10 @@ import { useSignIn } from "@clerk/nextjs";
 import { useCallback, useState } from "react";
 import { useRouter } from "next/navigation";
 
-const SignInWidget = () => {
+interface ISignInWidgetProps {
+  onClose?: () => void;
+}
+const SignInWidget = ({ onClose }: ISignInWidgetProps) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { signIn, setActive, isLoaded } = useSignIn();
@@ -44,12 +47,7 @@ const SignInWidget = () => {
 
   return (
     <>
-      <Modal
-        open={true}
-        className="relative z-50"
-        onClose={() => {}}
-        title={"Sign in to Briefberry"}
-      >
+      <Modal onClose={() => onClose?.()} title={"Sign in to Briefberry"}>
         <form onSubmit={onFormSubmit}>
           <div className={"space-y-6 text-center"}>
             <button
