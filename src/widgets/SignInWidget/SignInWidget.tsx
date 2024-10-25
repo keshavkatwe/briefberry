@@ -29,6 +29,7 @@ const SignInWidget = () => {
         if (signInAttempt?.status === "complete") {
           await setActive?.({ session: signInAttempt?.createdSessionId });
           router.push("/briefs");
+          router.refresh();
         } else {
           // If the status is not complete, check why. User may need to
           // complete further steps.
@@ -84,7 +85,7 @@ const SignInWidget = () => {
               <SubmitButton label={"Sign in"} />
               <p className={"text-hairline text-text-secondary"}>
                 Need an account?{" "}
-                <Link className="text-text-primary" href={"/sign-up"}>
+                <Link className="text-text-primary" href={"/register"} replace>
                   Sign up
                 </Link>
               </p>

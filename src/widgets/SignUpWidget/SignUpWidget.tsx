@@ -33,7 +33,7 @@ const SignUpWidget = () => {
             </button>
             <p className={"text-hairline text-text-secondary"}>
               Already have an account?{" "}
-              <Link className="text-text-primary" href={"/sign-up"}>
+              <Link className="text-text-primary" href={"/login"} replace>
                 Sign in
               </Link>
             </p>
