@@ -1,9 +1,6 @@
-"use client";
-import { useRouter } from "next/navigation";
-import SignInWidget from "@/widgets/SignInWidget/SignInWidget";
+import { SignInWidget } from "@/widgets";
 
 const LoginPage = () => {
-  const { back } = useRouter();
-  return <SignInWidget onClose={() => back()} />;
+  return <SignInWidget isCloseModal />;
 };
 export default LoginPage;

@@ -8,9 +8,10 @@ import { useCallback, useState } from "react";
 import { useRouter } from "next/navigation";
 
 interface ISignInWidgetProps {
-  onClose?: () => void;
+  isCloseModal?: boolean;
 }
-const SignInWidget = ({ onClose }: ISignInWidgetProps) => {
+const SignInWidget = ({ isCloseModal }: ISignInWidgetProps) => {
+  const { back } = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { signIn, setActive, isLoaded } = useSignIn();
@@ -47,7 +48,14 @@ const SignInWidget = ({ onClose }: ISignInWidgetProps) => {
 
   return (
     <>
-      <Modal onClose={() => onClose?.()} title={"Sign in to Briefberry"}>
+      <Modal
+        onClose={() => {
+          if (isCloseModal) {
+            back();
+          }
+        }}
+        title={"Sign in to Briefberry"}
+      >
         <form onSubmit={onFormSubmit}>
           <div className={"space-y-6 text-center"}>
             <button
