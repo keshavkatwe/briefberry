@@ -94,6 +94,13 @@ const config: Config = {
           letterSpacing: "-1.5%",
         },
       ],
+      heading: [
+        "14px",
+        {
+          lineHeight: "20px",
+          fontWeight: 500,
+        },
+      ],
     },
     colors: {
       "background-transparent": "transparent",
@@ -115,6 +122,9 @@ const config: Config = {
       "text-blue": "var(--text-blue)",
       stroke1: "var(--stroke1)",
       "stroke-subtle": "var(--stroke-subtle)",
+      green: "#00A656",
+      blue: "var(--blue)",
+      red: "var(--red)",
     },
     extend: {
       borderRadius: {
