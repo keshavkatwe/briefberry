@@ -1,14 +1,23 @@
+"use client";
 import { CreateContainer } from "@/components";
 import { Field, Input, Label } from "@headlessui/react";
+import { useCallback } from "react";
+import { useRouter } from "next/navigation";
 
 const NamePage = () => {
+  const router = useRouter();
+  const submit = useCallback(() => {
+    router.push("/new/goal");
+  }, [router]);
   return (
     <CreateContainer
       title={"What's the name of your project?"}
       badge={"2 / 7"}
       footer={
         <>
-          <button className={"btn btn-primary btn-regular"}>Continue</button>
+          <button className={"btn btn-primary btn-regular"} onClick={submit}>
+            Continue
+          </button>
         </>
       }
     >
