@@ -30,6 +30,13 @@ const tailwindInputVariants = plugin(({ addUtilities, theme }) => {
         ...getTextVariant("button", theme),
       },
     },
+
+    ".input-large": {
+      input: {
+        height: theme("spacing.16"),
+        borderRadius: theme("borderRadius.16"),
+      },
+    },
   });
 });
 
