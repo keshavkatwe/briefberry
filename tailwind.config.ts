@@ -94,6 +94,13 @@ const config: Config = {
           letterSpacing: "-1.5%",
         },
       ],
+      heading: [
+        "14px",
+        {
+          lineHeight: "20px",
+          fontWeight: 500,
+        },
+      ],
     },
     colors: {
       "background-transparent": "transparent",
