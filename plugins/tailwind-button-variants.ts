@@ -19,6 +19,15 @@ const tailwindButtonVariants = plugin(({ addComponents, theme }) => {
         backgroundColor: theme("colors.blue.600"),
       },
     },
+    outline: {
+      // backgroundColor: theme("colors.background-surface2"),
+      borderWidth: theme("spacing.px"),
+      borderColor: theme("colors.stroke1"),
+      color: theme("colors.text-secondary"),
+      "&:hover": {
+        backgroundColor: theme("colors.blue.600"),
+      },
+    },
     danger: {
       backgroundColor: theme("colors.red.500"),
       color: theme("colors.white"),
