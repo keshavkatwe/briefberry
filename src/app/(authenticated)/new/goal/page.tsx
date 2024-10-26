@@ -8,7 +8,7 @@ const GoalPage = () => {
   const router = useRouter();
 
   const submit = useCallback(() => {
-    router.push("/new/name");
+    router.push("/new/date");
   }, [router]);
 
   return (
