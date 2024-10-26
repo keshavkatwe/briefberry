@@ -13,7 +13,7 @@ const ProjectType = ({ label, icon }: IProjectTypeProps) => {
       }
     >
       <IconElement className={"size-5 text-text-secondary"} />
-      <h3 className={"text-hero text-heading text-text-secondary"}>{label}</h3>
+      <h3 className={"text-heading text-text-secondary"}>{label}</h3>
     </div>
   );
 };
